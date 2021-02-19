@@ -43,7 +43,7 @@ const ProjectState = (props) => {
 	//Get Projects
 	const getProjects = async () => {
 		try {
-			const result = await axiosClient.get('http://localhost:4000/api/projects')
+			const result = await axiosClient.get('/api/projects')
 
 
 			dispatch({
@@ -69,7 +69,7 @@ const ProjectState = (props) => {
 
 		try {
 
-			const result = await axiosClient.post('http://localhost:4000/api/projects', project)
+			const result = await axiosClient.post('/api/projects', project)
 			console.log(result)
 
 			dispatch({

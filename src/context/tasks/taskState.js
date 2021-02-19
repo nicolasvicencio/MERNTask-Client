@@ -76,7 +76,7 @@ const TaskState = (props) => {
 
 	const deleteTask = async (id, project) => {
 		try {
-			await axiosClient.delete(`http://localhost:4000/api/tasks/${id}`, { params: { project } })
+			await axiosClient.delete(`/api/tasks/${id}`, { params: { project } })
 
 			dispatch({
 				type: DELETE_TASK,
@@ -94,7 +94,7 @@ const TaskState = (props) => {
 	const updateTask = async (task) => {
 try {
 	
-	const result = await axiosClient.put(`http://localhost:4000/api/tasks/${task._id}`, task)
+	const result = await axiosClient.put(`/api/tasks/${task._id}`, task)
 
 
 	dispatch({

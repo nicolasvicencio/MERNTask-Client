@@ -34,7 +34,7 @@ const AuthState = props => {
 	//Functions
 const registerUsers = async (data) => {
 	try {
-		const response = await axiosClient.post('http://localhost:4000/api/users', data)
+		const response = await axiosClient.post('/api/users', data)
 		console.log(response.data)
 
 		dispatch({
@@ -71,7 +71,7 @@ const userAuthenticated = async () => {
 
 	try {
 		
-		const response = await axiosClient.get('http://localhost:4000/api/auth')
+		const response = await axiosClient.get('/api/auth')
 		
 		dispatch({
 			type: GET_USER,
@@ -90,7 +90,7 @@ const userAuthenticated = async () => {
 //user sign in
 const signIn = async (data) => {
 	try {
-		const response  = await axiosClient.post('http://localhost:4000/api/auth', data)
+		const response  = await axiosClient.post('/api/auth', data)
 
 		dispatch({
 			type: LOGIN_SUCCESS,
