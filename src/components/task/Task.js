@@ -10,10 +10,10 @@ const Task = ({ task }) => {
 	const { project } = projectsContext
 
 	const [currentProject] = project
-
+	
 	const tasksContext = useContext(taskContext)
 	const { deleteTask, getTasks, updateTask, saveCurrentTask } = tasksContext
-
+	
 	//User press delete btn
 	const removeTask = (id) => {
 		deleteTask(id, currentProject._id)
@@ -35,9 +35,8 @@ const Task = ({ task }) => {
 
 	const editCurrentTask = (task) => {
 		saveCurrentTask(task)
-		updateTask(task)
 	}
-
+console.log(task)
 
 
 
