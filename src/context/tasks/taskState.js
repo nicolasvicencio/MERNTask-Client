@@ -37,8 +37,7 @@ const TaskState = (props) => {
 	const getTasks = async (project) => {
 
 		try {
-			const response = await axiosClient.get('http://localhost:4000/api/tasks', { params: { project } })
-
+			const response = await axiosClient.get('/api/tasks', { params: { project } })
 			dispatch({
 				type: PROJECT_TASKS,
 				payload: response.data.tasks
@@ -53,9 +52,8 @@ const TaskState = (props) => {
 	const addTask = async (task) => {
 		console.log(task)
 		try {
-			const response = await axiosClient.post('http://localhost:4000/api/tasks', task)
+			const response = await axiosClient.post('/api/tasks', task)
 			console.log(response)
-
 			dispatch({
 				type: ADD_TASK,
 				payload: task
@@ -76,7 +74,7 @@ const TaskState = (props) => {
 
 	const deleteTask = async (id, project) => {
 		try {
-			await axiosClient.delete(`/api/tasks/${id}`, { params: { project } })
+			await axiosClient.delete(`/api/tasks/${id}`, { params: { project}})
 
 			dispatch({
 				type: DELETE_TASK,
@@ -95,7 +93,7 @@ const TaskState = (props) => {
 try {
 	
 	const result = await axiosClient.put(`/api/tasks/${task._id}`, task)
-
+	console.log(result.data.task)
 
 	dispatch({
 		type: UPDATE_TASK,

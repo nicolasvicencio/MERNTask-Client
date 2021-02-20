@@ -35,7 +35,7 @@ export default (state, action) => {
 		case UPDATE_TASK:
 		return{
 			...state,
-			projecttasks: state.projecttasks.map(el => el._id === action.payload_id ? action.payload : el)
+			projecttasks: state.projecttasks.map(el => el._id === action.payload._id ? action.payload : el)
 			}
 		case CURRENT_TASK: 
 		return{

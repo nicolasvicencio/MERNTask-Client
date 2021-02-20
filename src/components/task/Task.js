@@ -5,7 +5,7 @@ import projectContext from '../../context/projects/projectContext'
 
 const Task = ({ task }) => {
 
-
+	
 	const projectsContext = useContext(projectContext)
 	const { project } = projectsContext
 

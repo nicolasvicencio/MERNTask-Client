@@ -28,6 +28,7 @@ const [currentProject] = project
 const onClickDelete = () => {
 	deleteProject(currentProject._id)
 }
+console.log()
 
 	return (
 		<Fragment>
@@ -40,8 +41,8 @@ const onClickDelete = () => {
 				 <TransitionGroup>
 					{ projecttasks.map(task => (
 						<CSSTransition
-						nodeRef={nodeRef}
 						key={task._id}
+						nodeRef={nodeRef}
 						timeout={200}
 						classNames='tarea'
 						>
